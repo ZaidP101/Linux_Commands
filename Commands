@@ -1,0 +1,85 @@
+ls = list (of files, folders, etc)
+pwd = Print Working Directory
+cd = Change Directory
+cd .. = Take back from Directory (Exist) 
+1) mkdir xyz = Creat Directory xyz
+2) cd xyz = open / go to xyz
+3) mkdir abc = Creat a Directory in xyz as abc
+4) rmdir abc = delete a directory
+Touch xyz = creat blank file
+mv = move  ||  File one (nothing between) Folder one /
+cp = copy || file one (nb) folder one/
+Ls -R =  lists the directory and its sub-directories
+touch .xyz = creats a hidden file
+ls -a =  list all hiddend files
+history =  lists all commands in terminal
+printf "xyz" = prints xyz, and use "xyz/n" for next line
+ls -l = check the permission given to : owner, group & public.
+chmod 123(permission number ) xyz(file) = to grant or change permission (permission number can ce calculated by website "chmod calculator")
+top = who is consuming resources
+ps = current running processes
+ps -a = current running processes in back
+kill 123(process id got from using "top" command) = shuts the running process eg: shuts firefox etc
+apt install = app instal
+
+
+% Fxing "User is not in the sudoers file" / get user root acess 
+Note: $ = User
+          # = Super/ Root User
+1) su root>Password
+2) sudo visudo
+3) Find user privillage specification 
+4) copy the only line and on the next line paste the same but change "root" to "(user name)"
+5) press Ctrl+Enter, then press Enter and finally Ctrl+X
+
+% Download Browser
+1) wget ___(Browser link from FireFox) 
+2) go to download folder in terminal, type ls, copy the downloaded app
+3) sudo dpkg -i past the above here
+
+% Download Git
+1) apt install git
+2) git config --global user.name "xyz"
+3) git config --global user.email "xyz@gamil.com"
+
+how to make git track a project
+1) go to folder
+2) type git init
+3) git status = to know which satge 
+4) git add xyz(file name), if multiple files type "git add ."  (after every changes step 4 & 6 is repeated)
+5) git status 
+6) git commit -m "add note/ meaningfull"
+-- to undo the changes after step 4 = git restore --staged xyz (file name)
+to undo the changfes after step 6 = git reset --soft HEAD~1 (here 1 means go back once, from c3 to c2)  (eg: if commit1 commit2 commit3 done, git reset takes you to commit2) (soft reset takes one commit back but keeps the content but hard reset delets the last commit and also    staged and unstaged changes  
+
+% Branch
+to check current branch = git branch
+to creat a branch = git branch xyz (branch name)
+to switch a branch = git checkout xyz(branch name)
+to rename the current branch = git branch -m abc(new name)
+to delete a branch = git branch -d xyz(branch name)
+a)to temporary save = git stash (after git add .)
+b) then git stash apply
+
+
+git log = to view all privious commits
+
+% How to write in a txt file using vim
+Type vim xyz(Folder)
+vim editor: press i (insert) before writing text
+                     press "Esc" to leave insert mode
+                     press ":" and type q(quit)(exist)
+                                                      wq(Write and Quit)(save and exist)
+to search = press /abc
+to replace = Shift + :,%,s,/,old word/new word/g(globally)
+to undo = just press "u"
+to redo = Ctrl + r
+to delete a line = "dd"
+to replace a letter = take curser to letter and press "r" then put the new letter
+to redo all the changes = :e! and enter
+y = copy 
+p = past
+give numbers to each line =  :set nu
+remove above = :set nonu
+
+
