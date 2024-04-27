@@ -42,7 +42,7 @@ Note: $ = User
 2) git config --global user.name "xyz"
 3) git config --global user.email "xyz@gamil.com"
 
-how to make git track a project
+Basic Git
 1) go to folder
 2) type git init
 3) git status = to know which satge 
@@ -51,6 +51,12 @@ how to make git track a project
 6) git commit -m "add note/ meaningfull"
 -- to undo the changes after step 4 = git restore --staged xyz (file name)
 to undo the changfes after step 6 = git reset --soft HEAD~1 (here 1 means go back once, from c3 to c2)  (eg: if commit1 commit2 commit3 done, git reset takes you to commit2) (soft reset takes one commit back but keeps the content but hard reset delets the last commit and also    staged and unstaged changes  
+7)git remote add origin http.xyz(your repo link)
+8) git push -u origin main
+9) give user git name 
+10) if you put password of your git, it willo fail. so follow this YouTube tutorial : https://www.youtube.com/watch?v=ytSoabxSQ6E  (note:   on Expiration setting set "no expiration"
+11) what we can do is intsted of password past your Personal access token's given link
+
 
 % Branch
 to check current branch = git branch
