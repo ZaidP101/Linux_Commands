@@ -21,7 +21,7 @@ ps = current running processes
 ps -a = current running processes in back
 kill 123(process id got from using "top" command) = shuts the running process eg: shuts firefox etc
 apt install = app instal
-
+switch user = su xyz(user name)
 
 % Fxing "User is not in the sudoers file" / get user root acess 
 Note: $ = User
@@ -56,6 +56,8 @@ to undo the changfes after step 6 = git reset --soft HEAD~1 (here 1 means go bac
 9) give user git name 
 10) if you put password of your git, it willo fail. so follow this YouTube tutorial : https://www.youtube.com/watch?v=ytSoabxSQ6E  (note:   on Expiration setting set "no expiration"
 11) what we can do is intsted of password past your Personal access token's given link
+---
+git clone https..(repo link)
 
 
 % Branch
@@ -71,6 +73,7 @@ b) then git stash apply
 git log = to view all privious commits
 
 % How to write in a txt file using vim
+to install vim = sudo apt-get -y install vim
 Type vim xyz(Folder)
 vim editor: press i (insert) before writing text
                      press "Esc" to leave insert mode
