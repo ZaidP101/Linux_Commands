@@ -17,10 +17,16 @@ printf "xyz" = prints xyz, and use "xyz/n" for next line
 ls -l = check the permission given to : owner, group & public.
 chmod 123(permission number ) xyz(file) = to grant or change permission (permission number can ce calculated by website "chmod calculator")
 top = who is consuming resources
+df = storage details
+df -h = storage advance details
 ps = current running processes
 ps -a = current running processes in back
 kill 123(process id got from using "top" command) = shuts the running process eg: shuts firefox etc
-apt install = app instal
+nohup  xyz(any commands) = creats a files and stores the commands outputs eg: nohup df (this will store the info of storage (i.e df)in a new file 
+namely nohups.out) 
+apt install xyz = app instal(which is i the system)
+apt-get install xyz = install app from internet 
+sudo apt remove xyz: to uninstall
 switch user = su xyz(user name)
 
 % Fxing "User is not in the sudoers file" / get user root acess 
@@ -88,7 +94,33 @@ to replace a letter = take curser to letter and press "r" then put the new lette
 to redo all the changes = :e! and enter
 y = copy 
 p = past
-give numbers to each line =  :set nu
-remove above = :set nonu
+##############   Part - 2 #############
+
+
+uname = displays the name of the platfore you are using currently
+uptime = displays number of users, system start time, total start time
+date = display date 
+whoami = user name of the logged user
+who =  all activity of the uer
+which xyz(eg : python) = location, version, etc of the named(eg : pythin)
+id : user id's, group id's etc
+useradd -m yxz(user name) = to creat a new user in home directary
+sudo passwd yxz = to creat password for user
+userdel yxz = to delete the user
+sudo groupadd xyz(group name) = creat a group
+sudo gpasswd -a(a for add) abc(user name) xyz(group name) = to add the user in the group
+sudo gpasswd -M(add multiple users) abc1,abc2,abc3 xyz
+sudo groupdel xyz(group name) = delete a group
+sudo chown(change ownership) abc(new owner's user name) xyz(file or filder name)
+sudo chgrp(change group of a file/folder) xyz(new group) abc(file/folder)
+zip -r(-r for folders) abc.zip(new name of the zip file/folder) xyz(the file/folder you want to zip) = zip a file or folder
+unzip abc.zip(file or folder name) = unzip a file/foldr
+to copy  a file/folder from server to local = (in local) scp -i "pem file destination" -r(for folder) server adress:/home/adress .("."
+current location(where you want to past))
+to copy  a file/folder from local to server = (in local) scp -i "pem file destination" xyz(file name) server adress:destination adress
+
+
+
+
 
 
