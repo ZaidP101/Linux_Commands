@@ -118,6 +118,38 @@ unzip abc.zip(file or folder name) = unzip a file/foldr
 to copy  a file/folder from server to local = (in local) scp -i "pem file destination" -r(for folder) server adress:/home/adress .("."
 current location(where you want to past))
 to copy  a file/folder from local to server = (in local) scp -i "pem file destination" xyz(file name) server adress:destination adress
+to sync folder in local and server = rsync -e "ssh -i pem location(local) -avz xyz(folder name) server adress:/home/(location)
+
+
+################ Part - 3 ###################
+Networks
+
+ping abc(website link etc) = checks the working of a application
+**net-tools =
+netstat = provides connection details
+ifconfig = details of all networks 1) eth0 = ether-net connected to nic(network interface card)(nic use to connect networks)
+                              2) lo = when there is no connection i.e a stand alone server eg:your laptop internal server(local host/loop back server)
+traceroute = you search Youtube.com - your wifi > youtube server, here your request hops from one server to another to reach YT server, here the
+commands provides details and ip of all such servers
+tracepath = same as above but provides path
+mtr = my trace route- a combination of ping and trace
+nslookup xyz(website link) = provides details of ip and ports also
+telnet xyz 80(port number ) = public ip (http) (telnet hepls to connect with port number)
+telnet xyz 443 = private ip (https)
+dig xyz = to get info in details of the website 
+whois = more in details (including domain name registeration etc)
+
+
+curl -X GET http/(any api link i.e the data you want to bring) | jq ("| jq" beautify the data fetch)
+wget xyz(link) = get anything from internet
+watch top or mtr etc(any command) = this provides the output of the command given after watch in every 2sec, its like a loop to check status
+nmap -v(-v = verbos that is show on screen) http/link = this scane the website
+
+
+
+
+
+######################## Part - 4 ################
 
 
 
