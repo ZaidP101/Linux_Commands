@@ -150,6 +150,33 @@ nmap -v(-v = verbos that is show on screen) http/link = this scane the website
 
 
 ######################## Part - 4 ################
+AWK   SED    GREP
+
+AWK used fot bit of programming, used only in formated files 
+(say we have a log file with lakhs of data and 8 to 10 coloums)
+
+awk '{print $1,$4,$7}' xyz.log(file name) = prints coloumn 1, 4 and 7
+awk '/mumbai/ {print $1,$4,$7}' xyz.log(file name) = /filter/ > any word that you want to filter and search
+awk '/mumbai/ {count++} END {print "The Count of Mumbai is", count}' xyz.log(file name) = here END ends first command ie count mumbai and 2nd prints  the total count (""used to write whatever is in it)
+awk '$2 >= "03:00am" && $2 <= "04:00am" {print $2}' xyz.log(file name) = say coloimn contains time
+NR stands for Number of Rows
+
+
+SED same as AWK but can be for unformated data/file also
+
+sed -n(to exact match) '/mumbai/p' xyz.log(file name) = /is for filter/ & "p" is for print
+sed -n -e '/mumbai/=' xyz.log = print line number, here '=' is used that is an expression therefore '-e' is used
+sed '1,10 s/mumbai/delhi/g' xyz.log = from line 1 to 10 replace "mumbai" to "delhi", here "s"= string and g= global(change globally), to replace in 
+entire data just remove 1,10
+
+
+GREP same as above two but case insensetive
+
+grep -i -c mumbai xyz.log(file name) = -c is for count
+ps | grep xyz(any process name) = ps is for list all processes and grep is used to only display the process name mentioned
+ps | grep xyz(any process name) | awk 'print $2' = also can filter and print only coloumn 2
+
+
 
 
 
