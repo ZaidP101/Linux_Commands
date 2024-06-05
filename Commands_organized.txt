@@ -1,0 +1,161 @@
+Basic Linux Command Reference Guide
+
+
+
+1. File and Directory Management
+ls: Lists files, folders, etc.
+pwd: Prints the current working directory.
+cd: Changes the directory.
+cd ..: Takes you back to the previous directory.
+mkdir xyz: Creates a directory named xyz.
+cd xyz: Opens or navigates to directory xyz.
+mkdir abc: Creates a directory named abc inside xyz.
+rmdir abc: Deletes the directory abc.
+touch xyz: Creates a blank file named xyz.
+mv file1 folder1/: Moves file1 to folder1.
+cp file1 folder1/: Copies file1 to folder1.
+ls -R: Lists the directory and its subdirectories.
+touch .xyz: Creates a hidden file named .xyz.
+ls -a: Lists all files, including hidden files.
+history: Lists all commands used in the terminal.
+printf "xyz": Prints xyz; use printf "xyz\n" for a new line.
+ls -l: Checks the permissions given to owner, group, and public.
+chmod 123 xyz: Changes the permissions of xyz (permissions can be calculated using "chmod calculator").
+top: Shows who is consuming resources.
+df: Displays storage details.
+df -h: Displays advanced storage details.
+ps: Lists current running processes.
+ps -a: Lists current running background processes.
+kill 123: Shuts the running process with ID 123.
+nohup xyz: Creates a file and stores the command's output.
+apt install xyz: Installs an app from the system repository.
+apt-get install xyz: Installs an app from the internet.
+sudo apt remove xyz: Uninstalls an app.
+
+
+
+2. Sudoers and User Management
+Fixing "User is not in the sudoers file"
+su root: Switch to root user.
+sudo visudo: Edit the sudoers file.
+Find the user privilege specification.
+Copy the root line and change "root" to your username.
+Save and exit (Ctrl+Enter, Enter, Ctrl+X).
+Downloading and Installing Applications
+
+Browser:
+wget <Browser link>: Download a browser.
+cd Downloads: Go to the download folder.
+sudo dpkg -i <downloaded app>: Install the downloaded app.
+
+Git:
+apt install git: Install Git.
+git config --global user.name "xyz": Set Git username.
+git config --global user.email "xyz@gmail.com": Set Git email.
+
+Basic Git Commands
+cd folder: Navigate to your project folder.
+git init: Initialize a new Git repository.
+git status: Check the status of your repository.
+git add xyz: Stage a file named xyz.
+git add .: Stage all changes.
+git commit -m "message": Commit changes with a message.
+git remote add origin <repo link>: Add a remote repository.
+git push -u origin main: Push changes to the main branch.
+Undoing Changes
+git restore --staged xyz: Unstage a file.
+git reset --soft HEAD~1: Undo the last commit but keep changes staged.
+
+Branch Management
+git branch: List branches.
+git branch xyz: Create a new branch named xyz.
+git checkout xyz: Switch to the branch xyz.
+git branch -m abc: Rename the current branch to abc.
+git branch -d xyz: Delete the branch xyz.
+git stash: Temporarily save changes.
+git stash apply: Apply stashed changes.
+
+
+
+3. VIM Editor Basics
+sudo apt-get -y install vim: Install Vim.
+vim xyz: Open or create a file named xyz.
+VIM Commands
+Press i to enter insert mode.
+Press Esc to leave insert mode.
+Press : and type q to quit.
+Press : and type wq to save and quit.
+Press /abc to search.
+Use :%s/old/new/g to replace all occurrences of old with new.
+Press u to undo.
+Press Ctrl + r to redo.
+Use dd to delete a line.
+Use r to replace a character.
+Use :e! to undo all changes.
+Use y to copy and p to paste.
+
+
+
+4. User and Group Management
+uname: Displays the platform name.
+uptime: Shows the system uptime.
+date: Displays the current date.
+whoami: Shows the current user.
+who: Displays all logged-in users.
+which xyz: Shows the location and version of a command.
+id: Displays user and group IDs.
+useradd -m xyz: Creates a new user xyz.
+sudo passwd xyz: Sets a password for user xyz.
+userdel xyz: Deletes user xyz.
+sudo groupadd xyz: Creates a new group xyz.
+sudo gpasswd -a abc xyz: Adds user abc to group xyz.
+sudo gpasswd -M abc1,abc2,abc3 xyz: Adds multiple users to group xyz.
+sudo groupdel xyz: Deletes group xyz.
+sudo chown abc xyz: Changes the ownership of xyz to user abc.
+sudo chgrp xyz abc: Changes the group of abc to xyz.
+
+
+5. Compression and Networking
+zip -r abc.zip xyz: Zips xyz into abc.zip.
+unzip abc.zip: Unzips abc.zip.
+scp -i "pem file" -r server:/home/ .: Copies from server to local.
+scp -i "pem file" xyz server:/home/: Copies from local to server.
+rsync -e "ssh -i pem" -avz xyz server:/home/: Syncs folders.
+
+
+
+6. Network Commands
+ping xyz: Checks the connectivity to xyz.
+netstat: Displays connection details.
+ifconfig: Displays network interfaces.
+traceroute xyz: Traces the route to xyz.
+tracepath xyz: Similar to traceroute.
+mtr xyz: Combines ping and traceroute.
+nslookup xyz: Provides DNS information.
+telnet xyz 80: Connects to port 80 on xyz.
+telnet xyz 443: Connects to port 443 on xyz.
+dig xyz: Provides detailed DNS information.
+whois xyz: Provides domain registration information.
+curl -X GET http://xyz: Fetches data from xyz.
+wget xyz: Downloads xyz.
+watch top: Repeats the top command every 2 seconds.
+nmap -v http://xyz: Scans xyz.
+
+
+7. AWK, SED, and GREP
+AWK: Used for pattern scanning and processing.
+
+awk '{print $1,$4,$7}' xyz.log: Prints columns 1, 4, and 7.
+awk '/mumbai/ {print $1,$4,$7}' xyz.log: Filters by "mumbai".
+awk '/mumbai/ {count++} END {print "The Count of Mumbai is", count}' xyz.log: Counts occurrences of "mumbai".
+awk '$2 >= "03:00am" && $2 <= "04:00am" {print $2}' xyz.log: Filters by time range.
+SED: Stream editor for filtering and transforming text.
+
+sed -n '/mumbai/p' xyz.log: Prints lines containing "mumbai".
+sed -n -e '/mumbai/=' xyz.log: Prints line numbers with "mumbai".
+sed '1,10 s/mumbai/delhi/g' xyz.log: Replaces "mumbai" with "delhi" from lines 1 to 10.
+GREP: Searches for patterns in files.
+
+grep -i -c mumbai xyz.log: Counts occurrences of "mumbai".
+ps | grep xyz: Filters processes containing xyz.
+ps | grep xyz | awk '{print $2}': Prints the second column of processes containing xyz.
